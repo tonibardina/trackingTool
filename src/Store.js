@@ -1,6 +1,6 @@
 export class Store {
     constructor() {
-        this.state = ({})
+        this.state = [{}]
     }
 
     logState () {
@@ -12,9 +12,9 @@ export class Store {
     }
 
     updateState (obj) {
-        this.state = [{
+        this.state = [
             ...this.state,
-            obj
-        }]
+            obj 
+        ]
     }
 }

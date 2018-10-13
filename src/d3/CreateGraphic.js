@@ -1,15 +1,14 @@
 export class CreateGraphic {
     constructor(args) {
         this.lineData = [{"x": 0, "y": 0}]
-        this.svgContainer = args.svgContainer
-        this.lineColor = args.color || 'green'
-        this.pathStyle = args.pathStyle || {
+        this.lineColor = args && args.color || 'green'
+        this.pathStyle = args && args.pathStyle || {
             lc: "round",
             lj: "round",
             width: 5
         }
-        this.type = args.type || 'time'
-        this.frequency = args.frequency || 'minutes'
+        this.type = args && args.type || 'time'
+        this.frequency = args && args.frequency || 'minutes'
         this.time = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds()
         this.clicks = 0
         this.svgContainer = d3.select("body").append("svg")
