@@ -45,7 +45,9 @@ export class CreateGraphic {
     drawLine () {
         // set new click
         this.clicks+=1
-        //This is the accessor function we talked about above
+
+        this.createLineData()
+        
         const lineFunction = d3.line()
             .x(function(d) { return d.x; })
             .y(function(d) { return d.y; })
@@ -53,7 +55,7 @@ export class CreateGraphic {
         
         //The line SVG Path we draw
         const lineGraph = this.svgContainer.append("path")
-            .attr("d", lineFunction(this.createLineData()))
+            .attr("d", lineFunction(this.lineData))
             .attr("stroke", this.lineColor)
             .style("stroke-linecap", this.pathStyle.lc)
             .style("stroke-linejoin", this.pathStyle.lj)

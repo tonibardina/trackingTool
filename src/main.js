@@ -42,8 +42,8 @@ const handleClick = (e) => {
             lastClick: 'firstClick'
         })
     }
-
-    graphic.drawLine()
+    // Draw a graphic
+    // graphic.drawLine()
 }
 
 if (webPageHaveIframes) {
